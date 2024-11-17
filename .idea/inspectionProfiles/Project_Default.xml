@@ -1,0 +1,29 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="16">
+            <item index="0" class="java.lang.String" itemvalue="tkinter" />
+            <item index="1" class="java.lang.String" itemvalue="sql_conn" />
+            <item index="2" class="java.lang.String" itemvalue="os" />
+            <item index="3" class="java.lang.String" itemvalue="subprocess" />
+            <item index="4" class="java.lang.String" itemvalue="sys" />
+            <item index="5" class="java.lang.String" itemvalue="docx" />
+            <item index="6" class="java.lang.String" itemvalue="random" />
+            <item index="7" class="java.lang.String" itemvalue="re" />
+            <item index="8" class="java.lang.String" itemvalue="collections" />
+            <item index="9" class="java.lang.String" itemvalue="json" />
+            <item index="10" class="java.lang.String" itemvalue="shutil" />
+            <item index="11" class="java.lang.String" itemvalue="mysql" />
+            <item index="12" class="java.lang.String" itemvalue="threading" />
+            <item index="13" class="java.lang.String" itemvalue="time" />
+            <item index="14" class="java.lang.String" itemvalue="math" />
+            <item index="15" class="java.lang.String" itemvalue="add_missing_words" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
