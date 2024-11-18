@@ -5,22 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28940572-5fe5-4aaa-a4c5-35efa4c9a465" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/OAI7.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/first_actions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/init_collections.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/init_setup.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oai.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/senses/hardware.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/senses/keyboard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/senses/mouse.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/averager_NT_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/mouse_keyboard_NT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/new_text_NT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/numeric_track_NT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/pattern_NT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/pos_NT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/preference_NT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/process_conversations_NT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/schema_expand_NT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/semantic_word_check_NT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/template_response_NT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auto_chat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/gpt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/grammer_wipe.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/init_sql_tables_Default.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logic/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/respond.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wipe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/OAI7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OAI7.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/init_setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oai.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +46,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;A1CST&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/A1CST/OAI7.git&quot;,
+    &quot;accountId&quot;: &quot;72cd118e-ca91-4de0-82f0-7445d935af24&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -46,20 +67,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.first_actions.executor&quot;: &quot;Run&quot;,
-    &quot;Python.hardware.executor&quot;: &quot;Run&quot;,
-    &quot;Python.init_collections.executor&quot;: &quot;Run&quot;,
-    &quot;Python.keyboard.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mouse.executor&quot;: &quot;Run&quot;,
-    &quot;Python.oai.executor&quot;: &quot;Run&quot;,
-    &quot;Python.output.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.auto_chat.executor": "Run",
+    "Python.averager_NT_1.executor": "Run",
+    "Python.first_actions.executor": "Run",
+    "Python.grammar_examples_NT.executor": "Run",
+    "Python.grammer_wipe.executor": "Run",
+    "Python.hardware.executor": "Run",
+    "Python.init_collections.executor": "Run",
+    "Python.init_sql_tables_Default.executor": "Run",
+    "Python.keyboard.executor": "Run",
+    "Python.level_1_semantics.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.mouse.executor": "Run",
+    "Python.mouse_keyboard_NT.executor": "Run",
+    "Python.new_text_NT.executor": "Run",
+    "Python.numeric_track_NT.executor": "Run",
+    "Python.oai.executor": "Run",
+    "Python.output.executor": "Run",
+    "Python.pattern_NT.executor": "Run",
+    "Python.pos_NT.executor": "Run",
+    "Python.preference_NT.executor": "Run",
+    "Python.process_conversations_NT.executor": "Run",
+    "Python.respond.executor": "Run",
+    "Python.schema_expand_NT.executor": "Run",
+    "Python.semantic_word_check_NT.executor": "Run",
+    "Python.template_response_NT.executor": "Run",
+    "Python.wipe.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Users/pmiller/PycharmProjects/OAI7/functions",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\pmiller\PycharmProjects\OAI7\functions" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="OAI7" />
@@ -87,7 +133,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
+        <option value="bundled-python-sdk-98f27166c754-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.21829.153" />
       </set>
     </attachedChunks>
   </component>

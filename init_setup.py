@@ -2,6 +2,8 @@ import os
 import mysql.connector
 from mysql.connector import errorcode
 
+import init_sql_tables_Default
+from init_sql_tables_Default import create_base_tables  # Import from init_sql_tables_Default
 
 def create_user_and_database(ip_address, root_user):
     try:
@@ -77,10 +79,7 @@ from mysql.connector import Error
 from init_sql import get_connection
 
 def execute_sql(statement):
-    \"\"\"
-    Executes a given SQL statement without arguments.
-    :param statement: SQL query to execute
-    \"\"\"
+    \"\"\"Executes a given SQL statement without arguments.\"\"\"
     try:
         connection = get_connection()
         cursor = connection.cursor()
@@ -97,11 +96,7 @@ def execute_sql(statement):
             print("Connection closed.")
 
 def execute_sql_with_args(statement, args):
-    \"\"\"
-    Executes a given SQL statement with arguments.
-    :param statement: SQL query to execute
-    :param args: Tuple of arguments for the SQL query
-    \"\"\"
+    \"\"\"Executes a given SQL statement with arguments.\"\"\"
     try:
         connection = get_connection()
         cursor = connection.cursor()
@@ -123,35 +118,7 @@ def execute_sql_with_args(statement, args):
 
 
 def create_schema_and_table():
-    from sql_executor import execute_sql
-
-    schema_statement = "CREATE SCHEMA IF NOT EXISTS OA7;"
-    table_statement = """
-    CREATE TABLE IF NOT EXISTS OA7.sensory_input (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        cpu_usage FLOAT,
-        ram_usage_percent FLOAT,
-        ram_used_mb FLOAT,
-        ram_total_mb FLOAT,
-        hdd_usage_percent FLOAT,
-        hdd_used_gb FLOAT,
-        hdd_total_gb FLOAT,
-        gpu_utilization_percent FLOAT,
-        gpu_memory_used_mb FLOAT,
-        gpu_memory_total_mb FLOAT,
-        key_pressed TEXT,
-        mouse_position TEXT,
-        mouse_button TEXT,
-        mouse_action TEXT,
-        mouse_scroll TEXT,
-        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
-    """
-    execute_sql(schema_statement)
-    print("Schema OA7 created or verified.")
-
-    execute_sql(table_statement)
-    print("Table sensory_input created or verified.")
+    init_sql_tables_Default.init_sql_server()
 
 
 def main():
