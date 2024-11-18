@@ -80,6 +80,7 @@ def create_base_tables():
             chatgpt_response_8 TEXT,
             chatgpt_response_9 TEXT,
             chatgpt_response_10 TEXT,
+            higher_semantic BOOLEAN DEFAULT 0,
             FOREIGN KEY (original_word_id) REFERENCES OA7.word_data(id) ON DELETE CASCADE,
             FOREIGN KEY (parent_id) REFERENCES OA7.level_1_semantics(id) ON DELETE CASCADE
         );
@@ -102,6 +103,7 @@ def create_base_tables():
                     grammar_template_id2 INT NOT NULL,
                     pattern TEXT NOT NULL,
                     occurrence INT DEFAULT 1,
+                    processed BOOLEAN DEFAULT 0,
                     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     FOREIGN KEY (grammar_template_id1) REFERENCES OA7.grammar_templates(id) ON DELETE CASCADE,
                     FOREIGN KEY (grammar_template_id2) REFERENCES OA7.grammar_templates(id) ON DELETE CASCADE
@@ -136,8 +138,35 @@ def create_base_tables():
                     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 );
                 """)
-
-
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS OA7.level_2_semantics (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            combined_elements TEXT NOT NULL,  -- Combination of Level 1 semantic results
+            result TEXT NOT NULL,  -- The generated Level 2 semantic concept
+            parent_id TEXT NOT NULL,  -- IDs of parent Level 1 semantics (stored as a delimited string)
+            higher_semantic BOOLEAN DEFAULT 0,  -- Indicates if this has contributed to a Level 3 semantic
+            timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Record creation time
+        );
+            """)
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS OA7.grammar_patterns (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pattern TEXT NOT NULL,  -- Stores the pattern using parts of speech
+    occurrence_count INT DEFAULT 1,  -- Counts occurrences of the same POS pattern
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id) REFERENCES OA7.patterns(id) ON DELETE CASCADE -- Links back to the source pattern
+);
+""")
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS OA7.level_3_semantics (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    combined_elements TEXT NOT NULL,  -- Combination of Level 2 semantic results
+    result TEXT NOT NULL,  -- The generated Level 3 semantic concept
+    parent_ids TEXT NOT NULL,  -- IDs of parent Level 2 semantics (stored as a delimited string)
+    higher_semantic BOOLEAN DEFAULT 0,  -- Indicates if this has contributed to a higher-level semantic
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- Record creation time
+);
+""")
 
         print("Base tables created successfully.")
 

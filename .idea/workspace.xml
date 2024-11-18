@@ -4,32 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28940572-5fe5-4aaa-a4c5-35efa4c9a465" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/NT/averager_NT_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NT/mouse_keyboard_NT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NT/new_text_NT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NT/numeric_track_NT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NT/pattern_NT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NT/pos_NT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NT/preference_NT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NT/process_conversations_NT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NT/schema_expand_NT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NT/semantic_word_check_NT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NT/template_response_NT.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auto_chat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/gpt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/functions/grammer_wipe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/init_sql_tables_Default.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logic/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/respond.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wipe.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/OAI7.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OAI7.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="28940572-5fe5-4aaa-a4c5-35efa4c9a465" name="Changes" comment="Sensory Input and Prefernces Tied together at last">
+      <change afterPath="$PROJECT_DIR$/NT/grammar_pattern_NT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/level_2_semantics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NT/level_3_semantics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/pattern_reset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/functions/reset_semantic_lvl_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_chat.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/init_setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oai.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NT/averager_NT_1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NT/semantic_word_check_NT.py" beforeDir="false" afterPath="$PROJECT_DIR$/NT/semantic_word_check_NT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_chat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/gpt.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/gpt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init_sql_tables_Default.py" beforeDir="false" afterPath="$PROJECT_DIR$/init_sql_tables_Default.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,12 +60,15 @@
     "Python.averager_NT_1.executor": "Run",
     "Python.first_actions.executor": "Run",
     "Python.grammar_examples_NT.executor": "Run",
+    "Python.grammar_pattern_NT.executor": "Run",
     "Python.grammer_wipe.executor": "Run",
     "Python.hardware.executor": "Run",
     "Python.init_collections.executor": "Run",
     "Python.init_sql_tables_Default.executor": "Run",
     "Python.keyboard.executor": "Run",
     "Python.level_1_semantics.executor": "Run",
+    "Python.level_2_semantics.executor": "Run",
+    "Python.level_3_semantics.executor": "Run",
     "Python.main.executor": "Run",
     "Python.mouse.executor": "Run",
     "Python.mouse_keyboard_NT.executor": "Run",
@@ -87,13 +77,16 @@
     "Python.oai.executor": "Run",
     "Python.output.executor": "Run",
     "Python.pattern_NT.executor": "Run",
+    "Python.pattern_reset.executor": "Run",
     "Python.pos_NT.executor": "Run",
     "Python.preference_NT.executor": "Run",
     "Python.process_conversations_NT.executor": "Run",
+    "Python.reset_semantic_lvl_1.executor": "Run",
     "Python.respond.executor": "Run",
     "Python.schema_expand_NT.executor": "Run",
     "Python.semantic_word_check_NT.executor": "Run",
     "Python.template_response_NT.executor": "Run",
+    "Python.test_chat.executor": "Run",
     "Python.wipe.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -146,6 +139,19 @@
       <option name="presentableId" value="Default" />
       <updated>1731736780182</updated>
     </task>
+    <task id="LOCAL-00001" summary="Sensory Input and Prefernces Tied together at last">
+      <option name="closed" value="true" />
+      <created>1731910168672</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731910168672</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Sensory Input and Prefernces Tied together at last" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sensory Input and Prefernces Tied together at last" />
   </component>
 </project>

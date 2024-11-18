@@ -6,17 +6,46 @@ import random
 import time
 
 
-def get_random_words(limit=5):
-    """Fetch a random set of words from the word_data table."""
+def get_random_words():
+    """Fetch a random set of words from the word_data table based on occurrence and POS."""
     try:
         connection = get_connection()
         cursor = connection.cursor(dictionary=True)
-        cursor.execute(f"SELECT word FROM OA7.word_data ORDER BY RAND() LIMIT {limit}")
+
+        # Query to get words and their parts of speech
+        cursor.execute("""
+            SELECT word, part_of_speech
+            FROM OA7.word_data
+        """)
         words = cursor.fetchall()
-        return [word['word'] for word in words]
+
+        # Randomize the number of words to select (between 1 and 30)
+        limit = random.randint(1, 30)
+
+        # Shuffle words to randomize the selection
+        random.shuffle(words)
+
+        selected_words = []
+        last_pos = None  # To ensure we don't pick two words with the same POS consecutively
+
+        for word in words:
+            if len(selected_words) < limit and (last_pos is None or word['part_of_speech'] != last_pos):
+                selected_words.append(word['word'])
+                last_pos = word['part_of_speech']  # Update the last_pos to current word's POS
+
+            if len(selected_words) >= limit:  # Stop once we've selected the desired number of words
+                break
+
+        # Join selected words into a string and pass it to the GPT function
+        selected_words_string = ' '.join(selected_words)
+
+        print(f"Selected Words: {selected_words_string}")  # Debug: Show the selected words
+        corrected_sentence = gpt_generate_response(selected_words_string)
+        print(corrected_sentence)
+        insert_conversation(selected_words_string, corrected_sentence)
+
     except Error as e:
         print(f"Error fetching random words: {e}")
-        return []
     finally:
         if connection.is_connected():
             cursor.close()
@@ -26,9 +55,9 @@ def get_random_words(limit=5):
 def gpt_generate_response(oai_sentence):
     """Call GPT API to generate a conversational response using Chat Completions API."""
     system_message = (
-        "You are a conversational assistant. Use 2-3 words from the given input sentence to generate a proper conversational response and continue the dialogue. The words might seem random becuase they are, help build this AI's foundational langauge skills by providing feedback and conversational experience"
+        "You are creating an AI that is learning by chatting. Most messages will be random words; choose a few words from the message and construct a sentence to carry a conversation."
     )
-    full_prompt = f"Input: {oai_sentence}\nGenerate a response using 2-3 words from the input."
+    full_prompt = f"Input: {oai_sentence}\nGenerate a response using 10% of the words from the input to create a sentence that still makes sense."
 
     try:
         client = openai.OpenAI()  # Using your defined client structure
@@ -41,7 +70,17 @@ def gpt_generate_response(oai_sentence):
         )
 
         # Extract and return the response content
-        return response.choices[0].message.content.strip()
+        gpt_response = response.choices[0].message.content.strip()
+
+        # Check if GPT response includes approximately 10% of the words from input
+        input_word_count = len(oai_sentence.split())
+        gpt_word_count = len(gpt_response.split())
+
+        if gpt_word_count < input_word_count * 0.1:
+            print(
+                f"Warning: GPT response uses less than 10% of the words. Response length: {gpt_word_count}/{input_word_count}")
+
+        return gpt_response
     except Exception as e:
         print(f"Error generating GPT response: {e}")
         return None

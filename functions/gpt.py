@@ -22,7 +22,7 @@ def gpt_request_semantic(word):
     try:
         # System message to guide the response
         system_message = (
-            "You are a helpful assistant. Generate up to 10 semantic equations, examples: king + queen = monarch | do not give 1 word response they must be equations "
+            "You are a helpful assistant. Generate up to 10 semantic equations, examples: king + queen = monarch  or space - matter = void | do not give 1 word response they must be equations "
             "for the given word. Each equation should be denoted as follows: "
             "***Equation_1*** equation ***Equation_2*** equation ... ***Equation_10*** equation. "
             "NEVER PROVIDE EXPLANATIONS above or below the requested information."
@@ -278,3 +278,37 @@ def fetch_def_and_pos(word):
         print(f"Error fetching definition and POS for '{word}': {e}")
         return None, None
 
+
+def third_level_gpt_semantics(combined_level_2_strings):
+    """
+    Generate Level 3 semantics by combining higher-level concepts from Level 2 semantics.
+
+    Args:
+        combined_level_2_strings (str): A string of Level 2 semantics, joined by logical connectors.
+
+    Returns:
+        str: The generated Level 3 semantic concept.
+    """
+    prompt_modifier = (
+        "Use these Level 2 semantic combinations to discover an even higher-level concept. "
+        "Focus on creating a unified abstract idea or overarching category that combines the inputs."
+    )
+    full_prompt = f"{prompt_modifier} {combined_level_2_strings}"
+
+    try:
+        client = openai.OpenAI()
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system",
+                 "content": "Generate a Level 3 semantic concept by combining the provided Level 2 semantics. Only respond with the combined concept, no explanation."},
+                {"role": "user", "content": full_prompt}
+            ]
+        )
+        # Extract the output from the response
+        level_3_semantic = response.choices[0].message.content.strip()
+        return level_3_semantic
+
+    except openai.error.OpenAIError as e:
+        print(f"Error generating Level 3 semantic: {e}")
+        return None
